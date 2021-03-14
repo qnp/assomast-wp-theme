@@ -1,0 +1,26 @@
+{
+  "name": "assomast-wp-theme",
+  "version": "0.1.0",
+  "description": "Wordpress theme for Assomast",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/qnp/assomast-wp-theme.git"
+  },
+  "author": "François Risoud",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/qnp/assomast-wp-theme/issues"
+  },
+  "homepage": "https://github.com/qnp/assomast-wp-theme",
+  "devDependencies": {
+    "browser-sync": "^2.26.14",
+    "gulp": "^4.0.2",
+    "gulp-rename": "^2.0.0",
+    "gulp-stylus": "^2.7.0",
+    "prettier": "^2.2.1"
+  }
+}
