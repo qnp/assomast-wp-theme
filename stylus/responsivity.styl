@@ -22,3 +22,15 @@ media-up($breakpoint_name)
 media-between($breakpoint_name_1, $breakpoint_name_2)
   @media (min-width: $breakpoints[$breakpoint_name_1]) and (max-width: $breakpoints[$breakpoint_name_2] - $epsilon)
     {block}
+
+generate-responsive-classes()
+  for $breakpoing_name, $breakpoint_value in $breakpoints
+    .{$breakpoing_name}-and-down
+      @media (min-width: $breakpoint_value)
+        display none !important
+
+    .{$breakpoing_name}-and-up
+      @media (max-width: $breakpoint_value - $epsilon)
+        display none !important
+
+generate-responsive-classes()
