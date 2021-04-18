@@ -1,4 +1,7 @@
 <?php
+function print_asset($path) {
+  echo file_get_contents(get_template_directory_uri() . $path);
+}
 add_action('after_setup_theme', 'assomast_setup');
 function assomast_setup()
 {
