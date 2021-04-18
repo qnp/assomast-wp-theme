@@ -2,6 +2,10 @@
 function print_asset($path) {
   echo file_get_contents(get_template_directory_uri() . $path);
 }
+add_action( 'init', 'wpb_custom_new_menu' );
+function wpb_custom_new_menu() {
+  register_nav_menu('footer-menu',__( 'Footer Menu' ));
+}
 add_action('after_setup_theme', 'assomast_setup');
 function assomast_setup()
 {
