@@ -1,0 +1,60 @@
+// logo
+.logo
+  display block
+  width size(14)
+  min-width size(14)
+  margin-top size(0.5)
+  margin-left size(1)
+  margin-right size(2)
+  order -1
+
+  .asso, .mast
+    transition fill 0.25s ease
+
+  .asso
+    fill $color--primary
+
+  &:hover
+    .asso
+      fill lighten($color--primary, 15%)
+
+  &.logo--animate-1
+    $d = 100px
+    .dot
+      transition transform 2s ease-out
+
+    .dot--top
+      transform translate($d, $d)
+
+    .dot--middle
+      transform translate($d, -1 * $d)
+
+    .dot--bottom
+      transform translate(0, -1 * $d)
+
+  &.logo--animate-2
+    $d = -24px
+    .dot
+      transition none
+
+    .dot--top
+      transform translate($d, $d)
+
+    .dot--middle
+      transform translate($d, 0)
+
+    .dot--bottom
+      transform translate($d, -1 * $d)
+
+  &.logo--animate-3
+    .dot
+      transition transform 0.5s ease-out
+
+    .dot--top
+      transform translate(0, 0)
+
+    .dot--middle
+      transform translate(0, 0)
+
+    .dot--bottom
+      transform translate(0, 0)
