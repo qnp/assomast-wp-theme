@@ -1,20 +1,18 @@
 @import './functions.styl'
+@import './fonts.styl'
 @import './colors.styl'
 @import './spacing.styl'
 @import './elevations.styl'
 @import './interactivity.styl'
 @import './responsivity.styl'
-@import './fonts.styl'
-
+@import './typography.styl'
 @import './nav.styl'
+@import './mouse.styl'
+@import './button.styl'
 
 $burger-ease ?= cubic-bezier(0.77, 0.2, 0.05, 1)
 
 body
-  text-rendering optimizeLegibility
-  -webkit-font-smoothing antialiased
-  -moz-osx-font-smoothing grayscale
-  font-family 'Mukta', sans-serif
   background-color #f3eee8
 
 a[href]
@@ -26,7 +24,6 @@ a[href]
 
   &:hover
     text-decoration underline
-
 /*
  * CONTENT
  */
