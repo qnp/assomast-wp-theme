@@ -8,6 +8,7 @@ $burger-ease ?= cubic-bezier(0.77, 0.2, 0.05, 1)
   margin-top size(0.5)
   margin-left size(1)
   margin-right size(2)
+  order -1
 
   .asso, .mast
     transition fill 0.25s ease
@@ -45,33 +46,18 @@ nav#menu
   padding 0 size(3)
   color $color--black
   z-index 10
-  elevation('primary', 0)
+  elevation('black', 0)
   elevation-transition()
 
   &.nav--plain
-    background-color $color--primary
-    color $color--white
-    elevation('primary', 5)
-
-    #logo
-      .asso
-        fill lighten($color--tertiary, 25%)
-
-      .mast
-        fill $color--white
+    background-color $color--white
+    elevation('black', 5)
 
     ul.menu > li.menu-item a[href]:hover
       color inherit
 
-    button.button--primary
-      background-color $color--tertiary
-      elevation('tertiary', 5)
-      color white
-      svg
-        path
-          fill white
-
   button.button--primary
+    z-index 3
     elevation('primary', 5)
 
   .menu-menu-principal-container
@@ -108,6 +94,8 @@ nav#menu
         bottom 2px
 
       &:hover, &:focus-within
+        color $color--primary
+
         ul.sub-menu
           opacity 1
           visibility visible
@@ -139,7 +127,6 @@ nav#menu
   z-index 1
   user-select none
   white-space nowrap
-  width 100%
 
   .menu-content
     display flex
@@ -170,6 +157,7 @@ nav#menu
     z-index 1
     transform-origin 2px 0px
     transition transform 0.5s $burger-ease, background 0.5s $burger-ease, opacity 0.55s ease
+    transform translate(size(0.75), size(0.75))
 
     &:first-child
       transform-origin 0% 0%
@@ -180,9 +168,9 @@ nav#menu
   .burger-background
     display none
     background-color $color--primary
-    width size(14.5)
-    height size(14.5)
-    border-radius size(7)
+    width size(15.5)
+    height size(15.5)
+    border-radius size(8)
     position absolute
     top size(-8.5)
     left size(-8.5)
@@ -193,15 +181,15 @@ nav#menu
     // Burger animation
     &:checked ~ span
       opacity 1
-      transform rotate(45deg) scale(1.07, 1)
+      transform translate(8px, 8px) rotate(45deg) scale(1.07, 1)
       background $color--white
 
     &:checked ~ span:nth-last-child(3)
       opacity 0
-      transform rotate(0deg) scale(0.2, 0.2)
+      transform translate(8px, 8px) rotate(0deg) scale(0.2, 0.2)
 
     &:checked ~ span:nth-last-child(2)
-      transform rotate(-45deg) scale(1.07, 1)
+      transform translate(8px, 8px) rotate(-45deg) scale(1.07, 1)
 
     // Menu animation
     &:checked ~ .menu-content
@@ -212,7 +200,7 @@ nav#menu
         transform none
 
     &:checked ~ .burger-background
-      transform scale(5.5)
+      transform scale(4.75)
 
 +media-down('xs')
   nav#menu
@@ -225,26 +213,20 @@ nav#menu
     white-space normal
 
     #logo
-      .asso
-        fill lighten($color--tertiary, 25%)
-
-      .mast
-        fill $color--white
+      order 0
+      margin-top size(-0.75)
+      margin-left size(4)
+      margin-right size(1)
 
     &.nav--plain
       background none
 
-    button.button--primary
-      margin-top size(4)
-      background-color $color--tertiary
-      elevation('tertiary', 5)
-      color white
-      svg
-        path
-          fill white
+      #logo
+        opacity 0
+        visibility hidden
 
     ul.menu
-      margin-top size(1)
+      margin-top size(2)
       display block
 
       > li.menu-item
@@ -258,6 +240,9 @@ nav#menu
         &::after
           content ''
           display none
+
+        &:hover, &:focus-within
+          color inherit
 
     ul.sub-menu
       display none
