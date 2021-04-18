@@ -1,0 +1,25 @@
+#mouse
+  position fixed
+  z-index 1000
+  mix-blend-mode multiply
+
+  .mouse-dot
+    background-color $color--tertiary
+    position fixed
+    top 0
+    left 0
+    transform translate(calc(-50% + var(--mouse-x)), calc(-50% + var(--mouse-y)))
+    transition-property transform
+    transition-timing-function cubic-bezier(0, 0.8, 0.7, 1)
+    pointer-events none
+    user-select none
+
+    for $n in 1 .. 2
+      &:nth-child({$n})
+        $s = 1.5 - ($n * 0.5)
+        width size($s)
+        height size($s)
+        border-radius size($s)
+        z-index $n
+        transition-duration 0.5s + ($n * 0.1s)
+        transition-timing-function cubic-bezier(0, 0.7, 0.6 + ($n * 0.2), 1)
