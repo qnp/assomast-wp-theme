@@ -43,25 +43,36 @@ nav#menu
   display flex
   align-items center
   padding 0 size(3)
-  color black
+  color $color--black
   z-index 10
-  elevation(0)
+  elevation('primary', 0)
   elevation-transition()
 
   &.nav--plain
     background-color $color--primary
-    color white
-    elevation(7)
+    color $color--white
+    elevation('primary', 5)
 
     #logo
       .asso
         fill lighten($color--tertiary, 25%)
 
       .mast
-        fill white
+        fill $color--white
 
     ul.menu > li.menu-item a[href]:hover
       color inherit
+
+    button.button--primary
+      background-color $color--tertiary
+      elevation('tertiary', 5)
+      color white
+      svg
+        path
+          fill white
+
+  button.button--primary
+    elevation('primary', 5)
 
   .menu-menu-principal-container
     overflow hidden
@@ -110,7 +121,7 @@ nav#menu
     padding size(1.5) size(1)
     margin-top size(1.5)
     border-radius size(1)
-    elevation(7)
+    elevation('primary', 7)
 
     > li.menu-item
       padding size(1.5)
@@ -154,7 +165,7 @@ nav#menu
     height 2px
     margin-bottom size(0.75)
     position relative
-    background white
+    background $color--white
     border-radius 3px
     z-index 1
     transform-origin 2px 0px
@@ -176,14 +187,14 @@ nav#menu
     top size(-8.5)
     left size(-8.5)
     transition transform 0.5s $burger-ease
-    elevation(5)
+    elevation('primary', 5)
 
   input
     // Burger animation
     &:checked ~ span
       opacity 1
       transform rotate(45deg) scale(1.07, 1)
-      background white
+      background $color--white
 
     &:checked ~ span:nth-last-child(3)
       opacity 0
@@ -201,7 +212,7 @@ nav#menu
         transform none
 
     &:checked ~ .burger-background
-      transform scale(6)
+      transform scale(5.5)
 
 +media-down('xs')
   nav#menu
@@ -210,7 +221,7 @@ nav#menu
     justify-content flex-start
     align-items flex-start
     padding size(1.5)
-    color white
+    color $color--white
     white-space normal
 
     #logo
@@ -218,10 +229,19 @@ nav#menu
         fill lighten($color--tertiary, 25%)
 
       .mast
-        fill white
+        fill $color--white
 
     &.nav--plain
       background none
+
+    button.button--primary
+      margin-top size(4)
+      background-color $color--tertiary
+      elevation('tertiary', 5)
+      color white
+      svg
+        path
+          fill white
 
     ul.menu
       margin-top size(1)

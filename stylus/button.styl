@@ -20,11 +20,19 @@ button
     &.button--{$name}
       $color = lookup('$color--' + $name)
       background-color $color
-      color white
+
+      if ($name == 'primary')
+        color $color--white
+
+        svg
+          path
+            fill $color--white
+      else
+        color white
+
+        svg
+          path
+            fill white
 
       &:hover
         background-color lighten($color, 15%)
-
-      svg
-        path
-          fill white
