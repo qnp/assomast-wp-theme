@@ -1,0 +1,30 @@
+button
+  border none
+  height size(5)
+  border-radius size(2.5)
+  padding 0 size(2.5)
+  cursor pointer
+  background-color transparent
+  appearance none
+  color inherit
+  display inline-flex
+  align-items center
+  transition all 0.25s ease
+
+  svg
+    width size(2)
+    height size(2)
+    margin-right size(1)
+
+  for $name in $color-names
+    &.button--{$name}
+      $color = lookup('$color--' + $name)
+      background-color $color
+      color white
+
+      &:hover
+        background-color lighten($color, 15%)
+
+      svg
+        path
+          fill white
