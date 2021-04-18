@@ -20,6 +20,7 @@
           <span></span>
           <!-- <div id="search"><?php get_search_form(); ?></div> -->
           <div class="menu-content">
+            <a id="logo" href="/"><?php print_asset('/assets/logo.svg'); ?></a>
             <?php wp_nav_menu(array('theme_location' => 'main-menu')); ?>
           </div>
         </div>
