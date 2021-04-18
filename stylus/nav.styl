@@ -56,9 +56,13 @@ nav#menu
     ul.menu > li.menu-item a[href]:hover
       color inherit
 
-  button.button--primary
+  .ctas
     z-index 3
-    elevation('primary', 5)
+    display flex
+    align-items flex-end
+
+    button
+      margin-left size(2)
 
   .menu-menu-principal-container
     overflow hidden
@@ -260,3 +264,16 @@ nav#menu
 
     .burger-background, input, span
       display block
+
++media-down('xs')
+  nav#menu
+    .ctas
+      flex-direction column
+
+      button
+        margin-bottom size(1)
+
++media-down('xxs')
+  nav#menu
+    .logo
+      display none

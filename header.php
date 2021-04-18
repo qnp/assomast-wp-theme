@@ -30,10 +30,16 @@
         </div>
         <a id="logo" href="/"><?php print_asset('/assets/logo.svg'); ?></a>
         <div class="spacer"></div>
-        <button class="button--primary">
-          <?php print_asset('/assets/icons/hand-heart.svg'); ?>
-          Adhérer
-        </button>
+        <div class="ctas">
+          <button class="button--tertiary elevation--tertiary--5">
+            <?php print_asset('/assets/icons/hand-heart.svg'); ?>
+            Faire un don
+          </button>
+          <button class="button--secondary--alt elevation--secondary--alt--5">
+            <?php print_asset('/assets/icons/badge-account-horizontal.svg'); ?>
+            Adhérer
+          </button>
+        </div>
       </nav>
     </header>
     <div id="container">
