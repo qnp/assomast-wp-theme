@@ -4,7 +4,7 @@
   "description": "Wordpress theme for Assomast",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "PROXY=http://assomast:8888 gulp"
   },
   "repository": {
     "type": "git",

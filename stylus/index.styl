@@ -1,4 +1,43 @@
+@import './functions.styl'
 @import './colors.styl'
+@import './spacing.styl'
+@import './elevations.styl'
+@import './interactivity.styl'
+@import './responsivity.styl'
+@import './fonts.styl'
+
+@import './nav.styl'
+
+$burger-ease ?= cubic-bezier(0.77, 0.2, 0.05, 1)
 
 body
-  background-color $color--secondary
+  text-rendering optimizeLegibility
+  -webkit-font-smoothing antialiased
+  -moz-osx-font-smoothing grayscale
+  font-family 'Mukta', sans-serif
+  background-color #f3eee8
+
+a[href]
+  position relative
+  display inline-block
+  text-decoration none
+  transition all 0.25s ease
+  color $color--primary
+
+  &:hover
+    text-decoration underline
+
+/*
+ * CONTENT
+ */
+#container
+  padding-top size(10)
+
+main#content
+  padding size(4)
+
+/*
+ * FOOTER
+ */
+footer#footer
+  padding size(4)
