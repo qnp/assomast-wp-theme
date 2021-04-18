@@ -1,0 +1,77 @@
+:root
+  --mouse-x 0px
+  --mouse-y 0px
+
+// link-interactive-color($color, $alpha)
+//   &::before
+//     background-color alpha($color, $alpha)
+
+// link-interactive-on($color, $alpha)
+//   link-interactive-color($color, $alpha)
+
+//   &::before
+//     content ''
+//     display inline-block
+//     width size(6)
+//     height size(6)
+//     border-radius size(3)
+//     position absolute
+//     top 50%
+//     left 50%
+//     opacity 0
+//     transition opacity 0.2s, transform 0.2s ease
+//     transform translate(-50%, -50%) scale(0)
+
+//   &:hover, &:focus
+//     &::before
+//       opacity 1
+//       transform translate(-50%, -50%) scale(1)
+
+//   &:focus
+//     outline none
+
+// link-interactive-off()
+//   &::before
+//     content ''
+//     display none
+
+link-interactive-color($color)
+  &::before
+    background-color $color
+
+link-interactive-on($color = currentColor)
+  link-interactive-color($color)
+
+  &::before
+    content ''
+    display inline-block
+    width size(0.5)
+    height size(0.5)
+    border-radius size(3)
+    position absolute
+    opacity 0
+    transition opacity 0.1s, transform 0.35s ease, width 0.35s ease, border-radius 0.35s ease
+    transform translate(-50%, -50%) scale(1, 1)
+    bottom size(-1)
+    left 50%
+  // border 1px solid transparent
+  // padding size(0.75) size(1)
+  // border-radius size(4)
+  // text-decoration none
+
+  &:hover, &:focus
+    // border 1px solid currentColor
+    text-decoration none
+    &::before
+      opacity 1
+      width 100%
+      border-radius 0
+      transform translate(-50%, -50%) scale(1, 0.25)
+
+  &:focus
+    outline none
+
+link-interactive-off()
+  &::before
+    content ''
+    display none

@@ -1,0 +1,41 @@
+$sizes = 'auto' 'half' 0 1 2 3 4 5 6 7 8 9 10 12 16 24
+
+$t = 'top'
+$l = 'left'
+$r = 'right'
+$b = 'bottom'
+$x = 'left', 'right'
+$y = 'top', 'bottom'
+$a = 'top', 'left', 'right', 'bottom'
+
+$axes := {
+  t: $t,
+  l: $l,
+  r: $r,
+  b: $b,
+  x: $x,
+  y: $y,
+  a: $a
+}
+
+generate-spacings()
+  $spacings_with_auto = $sizes
+  append($spacings_with_auto, 'auto')
+
+  for $axis_name, $axis_props in $axes
+    for $inc in $spacings_with_auto
+      $spacing_value = size($inc)
+      .m{$axis_name}-{$inc}
+        for $axis_prop in $axis_props
+          margin-{$axis_prop} $spacing_value !important
+
+      if $inc != 'auto'
+        .m{$axis_name}-neg-{$inc}
+          for $axis_prop in $axis_props
+            margin-{$axis_prop} (-1 * $spacing_value)!important
+
+      .p{$axis_name}-{$inc}
+        for $axis_prop in $axis_props
+          padding-{$axis_prop} $spacing_value !important
+
+generate-spacings()
