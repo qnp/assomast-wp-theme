@@ -9,11 +9,15 @@
 </head>
 
 <body <?php body_class(); ?>>
+  <div id="mouse">
+    <div class="mouse-dot"></div>
+    <div class="mouse-dot"></div>
+  </div>
   <div id="wrapper" class="hfeed">
     <header id="header">
       <nav id="menu">
         <div id="burger">
-          <input type="checkbox"/>
+          <input type="checkbox" />
           <div class="burger-background"></div>
           <span></span>
           <span></span>
@@ -22,6 +26,11 @@
           <div class="menu-content">
             <a id="logo" href="/"><?php print_asset('/assets/logo.svg'); ?></a>
             <?php wp_nav_menu(array('theme_location' => 'main-menu')); ?>
+            <div class="spacer"></div>
+            <button class="button--primary">
+              <?php print_asset('/assets/icons/hand-heart.svg'); ?>
+              Adhérer
+            </button>
           </div>
         </div>
       </nav>
