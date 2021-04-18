@@ -23,9 +23,8 @@ a[href]
   text-decoration none
   transition all 0.25s ease
   color $color--primary
+  link-interactive-on()
 
-  &:hover
-    text-decoration underline
 /*
  * CONTENT
  */
@@ -35,6 +34,7 @@ a[href]
 main#content
   padding size(4)
 
+  header.header,
   article
     max-width size(80)
     margin 0 auto

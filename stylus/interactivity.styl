@@ -2,39 +2,6 @@
   --mouse-x -20px
   --mouse-y -20px
 
-// link-interactive-color($color, $alpha)
-//   &::before
-//     background-color alpha($color, $alpha)
-
-// link-interactive-on($color, $alpha)
-//   link-interactive-color($color, $alpha)
-
-//   &::before
-//     content ''
-//     display inline-block
-//     width size(6)
-//     height size(6)
-//     border-radius size(3)
-//     position absolute
-//     top 50%
-//     left 50%
-//     opacity 0
-//     transition opacity 0.2s, transform 0.2s ease
-//     transform translate(-50%, -50%) scale(0)
-
-//   &:hover, &:focus
-//     &::before
-//       opacity 1
-//       transform translate(-50%, -50%) scale(1)
-
-//   &:focus
-//     outline none
-
-// link-interactive-off()
-//   &::before
-//     content ''
-//     display none
-
 link-interactive-color($color)
   &::before
     background-color $color
@@ -42,26 +9,27 @@ link-interactive-color($color)
 link-interactive-on($color = currentColor)
   link-interactive-color($color)
 
-  &::before
+  &::before, &::after
     content ''
     display inline-block
     width size(0.5)
-    height size(0.5)
+    height 25%
     border-radius size(3)
     position absolute
     opacity 0
     transition opacity 0.1s, transform 0.35s ease, width 0.35s ease, border-radius 0.35s ease
     transform translate(-50%, -50%) scale(1, 1)
-    bottom size(-1)
+    bottom size(-0.75)
     left 50%
-  // border 1px solid transparent
-  // padding size(0.75) size(1)
-  // border-radius size(4)
-  // text-decoration none
+
+  // add also an invisible after element to avoid
+  // flickerring on hover due to change of before size
+  &::after
+    width 100%
 
   &:hover, &:focus
-    // border 1px solid currentColor
     text-decoration none
+
     &::before
       opacity 1
       width 100%
@@ -73,5 +41,5 @@ link-interactive-on($color = currentColor)
 
 link-interactive-off()
   &::before
-    content ''
-    display none
+    content '' !important
+    display none !important
