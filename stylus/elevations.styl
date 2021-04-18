@@ -3,7 +3,7 @@
  */
 shadow-key-umbra($color-name, $z)
   $color = lookup('$color--' + $color-name)
-  $shadow-key-umbra-opacity = alpha($color, .2)
+  $shadow-key-umbra-opacity = alpha($color, .12)
   $shadow-key-umbra = 0px 0px 0px 0px $shadow-key-umbra-opacity,
                       0px 2px 1px -1px $shadow-key-umbra-opacity,
                       0px 3px 1px -2px $shadow-key-umbra-opacity,
@@ -33,7 +33,7 @@ shadow-key-umbra($color-name, $z)
 
 shadow-key-penumbra($color-name, $z)
   $color = lookup('$color--' + $color-name)
-  $shadow-key-penumbra-opacity = rgba($color, .14)
+  $shadow-key-penumbra-opacity = rgba($color, .08)
   $shadow-key-penumbra = 0px 0px 0px 0px $shadow-key-penumbra-opacity,
                           0px 1px 1px 0px $shadow-key-penumbra-opacity,
                           0px 2px 2px 0px $shadow-key-penumbra-opacity,
@@ -63,7 +63,7 @@ shadow-key-penumbra($color-name, $z)
 
 shadow-key-ambient($color-name, $z)
   $color = lookup('$color--' + $color-name)
-  $shadow-key-ambient-opacity = rgba($color, .12)
+  $shadow-key-ambient-opacity = rgba($color, .07)
   $shadow-key-ambient = 0px 0px 0px 0px $shadow-key-ambient-opacity,
                         0px 1px 3px 0px $shadow-key-ambient-opacity,
                         0px 1px 5px 0px $shadow-key-ambient-opacity,
