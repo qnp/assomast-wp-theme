@@ -16,7 +16,7 @@ nav#menu
   elevation-transition()
 
   &.nav--plain
-    background-color $color--white
+    background-color lighten($color--white, 25%)
     elevation('black', 5)
 
     ul.menu > li.menu-item a[href]:hover
@@ -75,7 +75,8 @@ nav#menu
     visibility hidden
     transition opacity 0.2s
     position absolute
-    background-color lighten($color--secondary, 75%)
+    background-color lighten($color--white, 50%)
+    // background-color lighten($color--secondary, 85%)
     padding size(1.5) size(1)
     margin-top size(1.5)
     border-radius size(1)
@@ -84,7 +85,6 @@ nav#menu
     > li.menu-item
       padding size(1.5)
       width 100%
-      color $color--primary
 
       a[href]
         width 100%
@@ -172,7 +172,7 @@ nav#menu
     &:checked ~ .burger-background
       transform scale(4.75)
 
-+media-down('xs')
++media-down('sm')
   nav#menu
     height 100%
     background none
