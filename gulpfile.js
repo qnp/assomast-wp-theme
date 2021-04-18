@@ -15,7 +15,7 @@ gulp.task('stylus', () =>
 gulp.task('browser-sync', () => {
   browserSync.init({
     proxy: process.env.PROXY,
-    files: './assomast.css',
+    files: ['./assomast.css', '*.php', './scripts/*.js'],
   });
   gulp.watch('./stylus/*.styl', gulp.series('stylus'));
 });
