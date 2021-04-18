@@ -1,18 +1,37 @@
 footer#footer
   padding size(4)
-  color $color--white
+  padding-top 200px
+  color alpha($color--white, 0.5)
   position relative
   overflow hidden
 
   .background
-    position absolute
-    top 0
-    left 0
-    right 0
-    bottom 0
     content ''
     display block
+    position absolute
+    top 0
+    left 50%
+    transform translate(-50%, 0)
+    $s = 256
+    width 100%
     height 100vw
-    border-top-left-radius 50%
-    border-top-right-radius 50%
+    min-width size($s)
+    min-height size($s)
+    border-top-left-radius min(100vw, size($s / 2))
+    border-top-right-radius min(100vw, size($s / 2))
     background-color $color--black
+
+  .content
+    max-width size(80)
+    margin 0 auto
+
+  ul.menu
+    > li.menu-item
+      margin-bottom size(2)
+
+      a[href]
+        link-interactive-on()
+        color inherit
+
+        &:hover
+          color alpha($color--white, 1)
