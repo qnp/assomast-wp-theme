@@ -23,12 +23,15 @@
           <span></span>
           <span></span>
           <!-- <div id="search"><?php get_search_form(); ?></div> -->
-          <div class="menu-content">
-            <?php wp_nav_menu(array('theme_location' => 'main-menu')); ?>
-            <div class="spacer"></div>
+          <div class="menu-wrapper">
+            <a class="logo" href="/"><?php print_asset('/assets/logo.svg'); ?></a>
+            <div class="menu-content">
+              <?php wp_nav_menu(array('theme_location' => 'main-menu')); ?>
+              <div class="spacer"></div>
+            </div>
           </div>
         </div>
-        <a class="logo" href="/"><?php print_asset('/assets/logo.svg'); ?></a>
+        <!-- <a class="logo" href="/"><?php print_asset('/assets/logo.svg'); ?></a> -->
         <div class="spacer"></div>
         <div class="ctas">
           <button class="button--tertiary elevation--tertiary--5">

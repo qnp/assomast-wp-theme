@@ -14,6 +14,12 @@
 
 $burger-ease ?= cubic-bezier(0.77, 0.2, 0.05, 1)
 
+/*
+ * Global
+ */
+html
+  background-color $color--black
+
 body
   background-color $color--white
 
@@ -25,16 +31,40 @@ a[href]
   color $color--primary
   link-interactive-on()
 
+.round-background
+  content ''
+  display block
+  position absolute
+  top 0
+  left 50%
+  transform translate(-50%, 0)
+  $s = 256
+  width 100%
+  height 100vw
+  min-width size($s)
+  min-height size($s)
+  border-top-left-radius size($s / 2)
+  border-top-right-radius size($s / 2)
+
++media-up('lg')
+  .round-background
+    border-top-left-radius 100vw
+    border-top-right-radius 100vw
 /*
  * CONTENT
  */
 #container
   padding-top size(10)
+  min-height calc(100vh - 408px)
 
 main#content
-  padding size(4)
+  padding size(4) size(13)
 
   header.header,
   article
-    max-width size(80)
+    max-width size(74)
     margin 0 auto
+
++media-down('xs')
+  main#content
+    padding size(4)

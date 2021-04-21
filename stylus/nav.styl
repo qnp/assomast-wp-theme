@@ -27,6 +27,11 @@ nav#menu
     button
       margin-left size(2)
 
+  .menu-wrapper
+    display flex
+    align-items center
+    position relative
+
   .menu-menu-principal-container
     overflow hidden
 
@@ -101,15 +106,21 @@ nav#menu
   // Hidden input for the hamburger
   input
     display none
-    width size(3)
-    height size(3)
+    width size(15.5)
+    height size(15.5)
+    border-radius size(8)
+    appearance none
     position absolute
-    top -6px
-    left -4px
+    top size(-9) + 1px
+    left size(-9)
     cursor pointer
     opacity 0
     z-index 2
     -webkit-touch-callout none
+
+    &:focus
+      border 0
+      outline 0
 
   // Hamburger
   span
@@ -158,8 +169,16 @@ nav#menu
       transform translate(8px, 8px) rotate(-45deg) scale(1.07, 1)
 
     // Menu animation
-    &:checked ~ .menu-content
-      transform none
+    &:checked ~ .menu-wrapper
+      .logo
+        .asso
+          fill $color--secondary
+
+        .mast
+          fill white
+
+      .menu-content
+        transform none
 
       ul.menu > li.menu-item
         opacity 1
@@ -170,26 +189,42 @@ nav#menu
 
 +media-down('sm')
   nav#menu
-    height 100%
+    height auto
     background none
     justify-content flex-start
     align-items flex-start
-    padding size(1.5)
+    padding size(1.5) 0 size(1.5)
     color $color--white
     white-space normal
 
     .logo
-      order 0
-      margin-top size(-0.75)
-      margin-left size(4.5)
+      margin-top size(-3.75)
+      margin-left size(5.5)
       margin-right 0
+      z-index 3
 
     &.nav--plain
       background none
+      elevation('black', 0)
 
       .logo
-        opacity 0
-        visibility hidden
+        opacity 1
+        visibility visible
+
+    .ctas
+      flex-direction column
+      position relative
+
+      button
+        margin-left size(0.5)
+        margin-bottom size(1)
+        padding-right size(7)
+        transform translateX(size(1))
+        border-top-right-radius 0
+        border-bottom-right-radius 0
+
+        &:hover
+          transform translateX(0)
 
     ul.menu
       margin-top size(2)
@@ -217,25 +252,28 @@ nav#menu
     // Make this absolute positioned at the top left of the screen
     .menu-content
       position absolute
-      width 100vw
-      transform-origin 0% 0%
       transform translate(-100%, 0)
       transition transform 0.5s $burger-ease
       flex-direction column
       align-items flex-start
+      top size(1)
 
     .burger-background, input, span
       display block
 
-+media-down('xs')
-  nav#menu
-    .ctas
-      flex-direction column
-
-      button
-        margin-bottom size(1)
-
 +media-down('xxs')
   nav#menu
     .logo
-      display none
+      width size(13)
+      min-width size(13)
+      margin-top size(-3.5)
+      // margin-left size(5.5)
+
+    .ctas
+      right 0
+
+      button
+        padding-right size(10)
+
+        &:hover
+          transform translateX(size(-1))

@@ -1,6 +1,6 @@
 </div>
 <footer id="footer">
-  <div class="background"></div>
+  <div class="round-background"></div>
   <div class="content">
     <?php wp_nav_menu(array('theme_location' => 'footer-menu')); ?>
     <div id="copyright">

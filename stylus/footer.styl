@@ -5,20 +5,7 @@ footer#footer
   position relative
   overflow hidden
 
-  .background
-    content ''
-    display block
-    position absolute
-    top 0
-    left 50%
-    transform translate(-50%, 0)
-    $s = 256
-    width 100%
-    height 100vw
-    min-width size($s)
-    min-height size($s)
-    border-top-left-radius size($s / 2)
-    border-top-right-radius size($s / 2)
+  .round-background
     background-color $color--black
 
   .content
@@ -35,9 +22,3 @@ footer#footer
 
         &:hover
           color alpha($color--white, 1)
-
-+media-up('lg')
-  footer#footer
-    .background
-      border-top-left-radius 100vw
-      border-top-right-radius 100vw
