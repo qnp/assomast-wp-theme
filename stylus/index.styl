@@ -10,6 +10,7 @@
 @import './logo.styl'
 @import './mouse.styl'
 @import './button.styl'
+@import './hero.styl'
 @import './footer.styl'
 
 $burger-ease ?= cubic-bezier(0.77, 0.2, 0.05, 1)
@@ -17,7 +18,7 @@ $burger-ease ?= cubic-bezier(0.77, 0.2, 0.05, 1)
 /*
  * Global
  */
-html
+html.bottom
   background-color $color--black
 
 body
@@ -30,21 +31,33 @@ a[href]
   transition all 0.25s ease
   color $color--primary
   link-interactive-on()
+  // font-weight 600
+
+#wrapper
+  position relative
+  overflow hidden
 
 .round-background
   content ''
   display block
   position absolute
-  top 0
   left 50%
   transform translate(-50%, 0)
-  $s = 256
-  width 100%
-  height 100vw
+  $s = 320
+  width 130%
+  height 130vw
   min-width size($s)
-  min-height size($s)
+  min-height 10000px
   border-top-left-radius size($s / 2)
   border-top-right-radius size($s / 2)
+
++media-down('xs')
+  .round-background
+    $s = 256
+    min-width size($s)
+    min-height size($s)
+    border-top-left-radius size($s / 2)
+    border-top-right-radius size($s / 2)
 
 +media-up('lg')
   .round-background
@@ -54,8 +67,15 @@ a[href]
  * CONTENT
  */
 #container
+  position relative
   padding-top size(10)
   min-height calc(100vh - 408px)
+  margin-top -50vh
+
+header#header
+  .round-background
+    top 100vh
+    margin-top size(-10)
 
 main#content
   padding size(4) size(13)
@@ -64,6 +84,18 @@ main#content
   article
     max-width size(74)
     margin 0 auto
+
+  .entry-content
+    position relative
+    z-index 1
+
+    .round-background
+      position absolute
+      z-index -1
+
+    .padder
+      padding-top size(32)
+
 
 +media-down('xs')
   main#content

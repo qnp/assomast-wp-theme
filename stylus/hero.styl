@@ -1,0 +1,64 @@
+.hero
+  width 100%
+  height 150vh
+  background-size cover
+  position relative
+
+.hero__shade
+  position absolute
+  top 0
+  left 0
+  right 0
+  bottom 0
+  color white
+  font-weight bold
+  font-size 36px
+  background-image linear-gradient(alpha($color--white, 0.8) 0%, alpha(lighten($color--secondary, 25%), 0.45) 45%)
+
+.hero__content
+  position absolute
+  top 0
+  left 0
+  right 0
+  height 85vh
+  display flex
+  align-items center
+  justify-content center
+  flex-direction column
+  text-align center
+  color $color--black
+  margin size(3)
+
+  p
+    font-size size(2.5)
+    line-height size(3.5)
+    max-width size(60)
+
+.hero__logo
+  width size(32)
+  margin-bottom size(2)
+
+  .asso
+    fill lighten($color--primary, 5%)
+
+  .mast
+    fill $color--black
+
+.hero__ctas
+  margin-top size(2)
+
+  button
+    margin 0 size(0.75)
+
++media-down('xs')
+  .hero__logo
+    width size(28)
+
++media-down('xxs')
+  .hero__logo
+    width size(24)
+
+  .hero__content
+    p
+      font-size size(2)
+      line-height size(3)

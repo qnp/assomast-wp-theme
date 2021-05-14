@@ -8,17 +8,22 @@
 
   // NAV
   const navElement = document.querySelector('#menu');
-  function setNavClass() {
-    if (window.scrollY > 10) {
+  function scrollHandler() {
+    if (window.scrollY > 1) {
       navElement.classList.add('nav--plain');
     } else {
       navElement.classList.remove('nav--plain');
     }
+    if (window.scrollY > document.body.scrollHeight - window.innerHeight - 10) {
+      document.querySelector('html').classList.add('bottom');
+    } else {
+      document.querySelector('html').classList.remove('bottom');
+    }
   }
   window.addEventListener('scroll', e => {
-    setNavClass();
+    scrollHandler();
   });
-  setNavClass();
+  scrollHandler();
 
   // LOGO
   const logoElement = document.querySelector('.logo');
