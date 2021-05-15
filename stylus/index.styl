@@ -55,7 +55,6 @@ a[href]
   .round-background
     $s = 256
     min-width size($s)
-    min-height size($s)
     border-top-left-radius size($s / 2)
     border-top-right-radius size($s / 2)
 
@@ -75,7 +74,6 @@ a[href]
 header#header
   .round-background
     top 100vh
-    margin-top size(-10)
 
 main#content
   padding size(4) size(13)
@@ -92,11 +90,27 @@ main#content
     .round-background
       position absolute
       z-index -1
+      margin-top size(4)
 
     .padder
-      padding-top size(32)
+      padding-top size(20)
 
 
 +media-down('xs')
   main#content
     padding size(4)
+
+/*
+ * Home
+ */
+body.home
+  nav#menu
+    .ctas
+      visibility hidden
+      opacity 0
+      transition opacity 0.5s
+
+    &.nav--at-container
+      .ctas
+        visibility visible
+        opacity 1

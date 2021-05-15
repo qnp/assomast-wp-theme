@@ -52,14 +52,20 @@
           </div>
           <p>Association des patients atteints de mastocytoses et de syndromes d’activation mastocytaires</p>
           <div class="hero__ctas">
-            <button class="button--tertiary elevation--tertiary--5">
+            <button class="button--large button--tertiary elevation--tertiary--5">
               <?php print_asset('/assets/icons/hand-heart.svg'); ?>
               Faire un don
             </button>
-            <button class="button--secondary--alt elevation--secondary--alt--5">
+            <button class="button--large button--secondary--alt elevation--secondary--alt--5">
               <?php print_asset('/assets/icons/badge-account-horizontal.svg'); ?>
               Adhérer
             </button>
+          </div>
+          <div class="scroll-discover">
+            <div class="scroll-discover__text">Découvrir</div>
+            <div class="scroll-discover__arrow">
+              <?php print_asset('/assets/icons/arrow-expand-down.svg'); ?>
+            </div>
           </div>
         </div>
       </div>

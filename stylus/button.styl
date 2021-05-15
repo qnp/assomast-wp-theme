@@ -19,6 +19,18 @@ button
     min-height size(2)
     margin-right size(1)
 
+  &.button--large
+    height size(6)
+    border-radius size(3)
+    padding 0 size(3)
+    font-size 18px
+
+    svg
+      width size(2.5)
+      height size(2.5)
+      min-width size(2.5)
+      min-height size(2.5)
+
   for $name in $color-names
     &.button--{$name}
       $color = lookup('$color--' + $name)

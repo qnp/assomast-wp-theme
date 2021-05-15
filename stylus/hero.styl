@@ -20,7 +20,7 @@
   top 0
   left 0
   right 0
-  height 85vh
+  height 100vh
   display flex
   align-items center
   justify-content center
@@ -28,6 +28,7 @@
   text-align center
   color $color--black
   margin size(3)
+  padding-bottom 15vh
 
   p
     font-size size(2.5)
@@ -48,7 +49,7 @@
   margin-top size(2)
 
   button
-    margin 0 size(0.75)
+    margin size(0.75)
 
 +media-down('xs')
   .hero__logo
@@ -62,3 +63,48 @@
     p
       font-size size(2)
       line-height size(3)
+
+.scroll-discover
+  position absolute
+  bottom size(8)
+  color $color--primary
+  cursor pointer
+
+  svg
+    fill $color--primary
+
+  &__text
+    margin-bottom size(0.5)
+
+  &__arrow
+    animation scroll-discover-bounce 7s linear infinite
+
+  &__text, &__arrow
+    opacity 0.75
+    transition opacity 0.2s ease
+
+.scroll-discover:hover
+  .scroll-discover__text, .scroll-discover__arrow
+    opacity 1
+
+@keyframes scroll-discover-bounce
+  80%
+    transform translateY(0)
+
+  83%
+    transform translateY(5px)
+
+  85%
+    transform translateY(7px)
+
+  90%
+    transform translateY(0)
+
+  93%
+    transform translateY(5px)
+
+  95%
+    transform translateY(7px)
+
+  100%
+    transform translateY(0)
