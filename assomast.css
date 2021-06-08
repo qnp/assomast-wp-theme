@@ -2099,7 +2099,8 @@ ul,
 li,
 label,
 small,
-caption {
+caption,
+figcaption {
   font-weight: 400;
   color: inherit;
 }
@@ -2128,9 +2129,22 @@ h5,
 h6,
 p {
   margin-top: 0;
+}
+h1,
+h2 {
+  margin-bottom: 32px;
+}
+h3,
+h4 {
+  margin-bottom: 24px;
+}
+h5,
+h6,
+p {
   margin-bottom: 16px;
 }
-caption {
+caption,
+figcaption {
   display: inline-block;
   text-align: inherit;
   width: 100%;
@@ -2163,7 +2177,8 @@ p {
   font-size: 16px;
   line-height: 24px;
 }
-caption {
+caption,
+figcaption {
   font-size: 12px;
   line-height: 16px;
 }
@@ -2789,11 +2804,11 @@ button.button--quinary:hover {
 .scroll-discover {
   position: absolute;
   bottom: 64px;
-  color: #4c19cd;
+  color: #131112;
   cursor: pointer;
 }
 .scroll-discover svg {
-  fill: #4c19cd;
+  fill: #131112;
 }
 .scroll-discover__text {
   margin-bottom: 4px;
@@ -3058,7 +3073,7 @@ a[href]:focus {
   position: absolute;
   left: 50%;
   transform: translate(-50%, 0);
-  width: 130%;
+  width: 130vw;
   height: 130vw;
   min-width: 2560px;
   min-height: 10000px;
@@ -3126,4 +3141,58 @@ body.home nav#menu .ctas {
 body.home nav#menu.nav--at-container .ctas {
   visibility: visible;
   opacity: 1;
+}
+/*
+ * Columns, layout
+ */
+.wp-block-columns {
+  margin-bottom: 0;
+}
+/*
+ * Images
+ */
+figure.wp-block-image img {
+  height: auto;
+}
+figure.wp-block-image figcaption:after {
+  content: '';
+  display: block;
+  width: 16px;
+  height: 1px;
+  margin-top: 6px;
+  background-color: #4c19cd;
+}
+figure.wp-block-image.block-half-left {
+  float: left;
+  width: calc(50% + 64px);
+  margin-left: -80px;
+  margin-right: 32px;
+  margin-top: 4px;
+}
+figure.wp-block-image.block-half-right {
+  float: right;
+  width: calc(50% + 64px);
+  margin-right: -80px;
+  margin-left: 32px;
+  margin-top: 4px;
+}
+.wp-block-columns .wp-block-column:first-child .wp-block-image {
+  margin-left: -80px;
+}
+.wp-block-columns .wp-block-column:last-child .wp-block-image {
+  margin-right: -80px;
+}
+@media (max-width: 599.99px) {
+  figure.wp-block-image.block-half-left,
+  figure.wp-block-image.block-half-right {
+    float: none;
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+  }
+  .wp-block-columns .wp-block-column:first-child .wp-block-image,
+  .wp-block-columns .wp-block-column:last-child .wp-block-image {
+    margin-left: 0;
+    margin-right: 0;
+  }
 }

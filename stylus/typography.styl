@@ -10,7 +10,7 @@ html, body
   -moz-osx-font-smoothing grayscale
   body-font()
 
-h1, h2, h3, h4, h5, h6, p, ul, li, label, small, caption
+h1, h2, h3, h4, h5, h6, p, ul, li, label, small, caption, figcaption
   font-weight 400
   color inherit
 
@@ -22,9 +22,17 @@ p, ul, li, label, small, caption, button
 
 h1, h2, h3, h4, h5, h6, p
   margin-top 0
+
+h1, h2
+  margin-bottom size(4)
+
+h3, h4
+  margin-bottom size(3)
+
+h5, h6, p
   margin-bottom size(2)
 
-caption
+caption, figcaption
   display inline-block
   text-align inherit
   width 100%
@@ -57,7 +65,7 @@ p
   font-size 2 * $step
   line-height 3 * $step
 
-caption
+caption, figcaption
   font-size 1.5 * $step
   line-height 2 * $step
 

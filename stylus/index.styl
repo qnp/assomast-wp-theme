@@ -44,7 +44,7 @@ a[href]
   left 50%
   transform translate(-50%, 0)
   $s = 320
-  width 130%
+  width 130vw
   height 130vw
   min-width size($s)
   min-height 10000px
@@ -114,3 +114,63 @@ body.home
       .ctas
         visibility visible
         opacity 1
+
+/*
+ * Columns, layout
+ */
+$image-shift = size(10)
+
+.wp-block-columns
+  margin-bottom 0
+
+/*
+ * Images
+ */
+figure.wp-block-image
+  img
+    height auto
+
+  figcaption:after
+    content ''
+    display block
+    width size(2)
+    height 1px
+    margin-top size(0.75)
+    background-color $color--primary
+
+  &.block-half-left
+    float left
+    width unquote(s('calc(50% + %s)', ($image-shift - size(2))))
+    margin-left -1 * $image-shift
+    margin-right size(4)
+    margin-top size(0.5)
+
+  &.block-half-right
+    float right
+    width unquote(s('calc(50% + %s)', ($image-shift - size(2))))
+    margin-right -1 * $image-shift
+    margin-left size(4)
+    margin-top size(0.5)
+
+.wp-block-columns
+  .wp-block-column:first-child
+    .wp-block-image
+      margin-left -1 * $image-shift
+
+  .wp-block-column:last-child
+    .wp-block-image
+      margin-right -1 * $image-shift
+
++media-down('xs')
+  figure.wp-block-image
+    &.block-half-left, &.block-half-right
+      float none
+      margin-left 0
+      margin-right 0
+      width 100%
+
+  .wp-block-columns
+    .wp-block-column:first-child, .wp-block-column:last-child
+      .wp-block-image
+        margin-left 0
+        margin-right 0
