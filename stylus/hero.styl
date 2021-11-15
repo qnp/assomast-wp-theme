@@ -65,27 +65,41 @@
       line-height size(3)
 
 .scroll-discover
+  $size = 15
   position absolute
-  bottom size(8)
+  bottom size(10)
   color $color--black
   cursor pointer
+  width size($size)
+  height size($size)
+  border 1px dashed $color--black
+  border-radius size(($size / 2))
+  display flex
+  justify-content center
+  align-items center
+  flex-direction column
+  transition border 0.2s ease
 
   svg
     fill $color--black
 
   &__text
-    margin-bottom size(0.5)
+    margin-bottom size(1)
 
   &__arrow
     animation scroll-discover-bounce 7s linear infinite
 
   &__text, &__arrow
-    opacity 0.75
-    transition opacity 0.2s ease
+    transition color 0.2s ease
 
 .scroll-discover:hover
+  border 2px solid $color--primary
+
   .scroll-discover__text, .scroll-discover__arrow
-    opacity 1
+    color $color--primary
+
+  svg
+    fill $color--primary
 
 @keyframes scroll-discover-bounce
   80%

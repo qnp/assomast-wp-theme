@@ -2803,27 +2803,41 @@ button.button--quinary:hover {
 }
 .scroll-discover {
   position: absolute;
-  bottom: 64px;
+  bottom: 80px;
   color: #131112;
   cursor: pointer;
+  width: 120px;
+  height: 120px;
+  border: 1px dashed #131112;
+  border-radius: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  transition: border 0.2s ease;
 }
 .scroll-discover svg {
   fill: #131112;
 }
 .scroll-discover__text {
-  margin-bottom: 4px;
+  margin-bottom: 8px;
 }
 .scroll-discover__arrow {
   animation: scroll-discover-bounce 7s linear infinite;
 }
 .scroll-discover__text,
 .scroll-discover__arrow {
-  opacity: 0.75;
-  transition: opacity 0.2s ease;
+  transition: color 0.2s ease;
+}
+.scroll-discover:hover {
+  border: 2px solid #4c19cd;
 }
 .scroll-discover:hover .scroll-discover__text,
 .scroll-discover:hover .scroll-discover__arrow {
-  opacity: 1;
+  color: #4c19cd;
+}
+.scroll-discover:hover svg {
+  fill: #4c19cd;
 }
 @-moz-keyframes scroll-discover-bounce {
   80% {
@@ -3016,6 +3030,9 @@ footer#footer ul.menu > li.menu-item a[href]:hover {
 /*
  * Global
  */
+::selection {
+  background-color: rgba(183,156,237,0.5);
+}
 html.bottom {
   background-color: #131112;
 }
@@ -3063,6 +3080,14 @@ a[href]:focus::before {
 a[href]:focus {
   outline: none;
 }
+a[href].post-edit-link {
+  font-size: 14px;
+  margin-bottom: 16px;
+  opacity: 0.5;
+}
+a[href].post-edit-link:hover {
+  opacity: 1;
+}
 #wrapper {
   position: relative;
   overflow: hidden;
@@ -3097,8 +3122,11 @@ a[href]:focus {
  * CONTENT
  */
 #container {
-  position: relative;
   padding-top: 80px;
+  min-height: calc(100vh - 280px);
+}
+body.home #container {
+  position: relative;
   min-height: calc(100vh - 408px);
   margin-top: -50vh;
 }

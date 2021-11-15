@@ -44,13 +44,14 @@
           </button>
         </div>
       </nav>
+      <?php if (is_front_page()) { ?>
       <div class="hero" style="background-image: url(<?php echo get_template_directory_uri() . '/assets/images/hero.jpg'; ?>)">
         <div class="hero__shade"></div>
         <div class="hero__content">
           <div class="hero__logo">
             <?php print_asset('/assets/logo.svg'); ?>
           </div>
-          <p>Association des patients atteints de mastocytoses et de syndromes d’activation mastocytaires</p>
+          <p>Association française des patients atteints de mastocytoses et de syndromes d’activation mastocytaires (SAMA)</p>
           <div class="hero__ctas">
             <button class="button--large button--tertiary elevation--tertiary--5">
               <?php print_asset('/assets/icons/hand-heart.svg'); ?>
@@ -69,6 +70,7 @@
           </div>
         </div>
       </div>
+      <?php } ?>
       <div class="round-background white"></div>
     </header>
     <div id="container">
