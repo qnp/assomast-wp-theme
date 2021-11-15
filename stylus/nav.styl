@@ -43,6 +43,9 @@ nav#menu
       transition opacity 0.75s, transform 0.35s ease
       padding size(1.5) size(2)
 
+      &:before
+        display none
+
       for $n in 1..10
         &:nth-child({$n})
           transition-delay ($n + 1) * 0.1s

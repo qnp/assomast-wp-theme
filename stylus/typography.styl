@@ -61,7 +61,7 @@ h6
   font-size 2 * $step
   line-height 2.5 * $step
 
-p
+p, ul, li
   font-size 2 * $step
   line-height 3 * $step
 
@@ -72,6 +72,26 @@ caption, figcaption
 button
   font-size 2 * $step
   line-height 3 * $step
+
+li
+  position relative
+  display inline-flex
+  margin-left 2 * $step
+
+li:before
+  content ''
+  display inline-block
+  position absolute
+  left -2 * $step
+  top 9px
+  width 6px
+  height 6px
+  border-radius 3px
+  background-color $color--secondary
+  transition background-color 0.3s ease
+
+li:hover:before
+  background-color $color--tertiary
 
 +media-down('xs')
   h1
