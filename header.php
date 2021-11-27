@@ -59,7 +59,7 @@
           <div class="hero__logo">
             <?php print_asset('/assets/logo.svg'); ?>
           </div>
-          <p>Association française des patients atteints de mastocytoses et de syndromes d’activation mastocytaires (SAMA)</p>
+          <p><?php echo get_bloginfo( 'description', 'display' ) ?></p>
           <div class="hero__ctas">
             <a class="a-button" href="<?php echo DONNATION_URL; ?>">
               <button class="button--large button--tertiary elevation--tertiary--5">
