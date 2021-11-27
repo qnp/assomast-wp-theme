@@ -49,8 +49,13 @@ footer#footer
     padding-top size(2)
 
   ul.menu
+    margin-bottom 0
+
     > li.menu-item
       padding-bottom size(3)
+
+      &:before
+        display none
 
       a[href]
         link-interactive-on()

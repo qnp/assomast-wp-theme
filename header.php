@@ -1,5 +1,9 @@
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
+<?php
+  define('ADHESION_URL', 'https://www.helloasso.com/associations/assomast/adhesions/formulaire-adhesion-assomast-2021');
+  define('DONNATION_URL', 'https://www.helloasso.com/associations/assomast/formulaires/4');
+?>
 
 <head>
   <meta charset="<?php bloginfo('charset'); ?>" />
@@ -34,14 +38,18 @@
         <!-- <a class="logo" href="/"><?php print_asset('/assets/logo.svg'); ?></a> -->
         <div class="spacer"></div>
         <div class="ctas">
-          <button class="button--tertiary elevation--tertiary--5">
-            <?php print_asset('/assets/icons/hand-heart.svg'); ?>
-            Faire un don
-          </button>
-          <button class="button--secondary--alt elevation--secondary--alt--5">
-            <?php print_asset('/assets/icons/badge-account-horizontal.svg'); ?>
-            Adhérer
-          </button>
+          <a class="a-button" href="<?php echo DONNATION_URL; ?>">
+            <button class="button--tertiary elevation--tertiary--5">
+              <?php print_asset('/assets/icons/hand-heart.svg'); ?>
+              Faire un don
+            </button>
+          </a>
+          <a class="a-button" href="<?php echo ADHESION_URL; ?>">
+            <button class="button--secondary--alt elevation--secondary--alt--5">
+              <?php print_asset('/assets/icons/badge-account-horizontal.svg'); ?>
+              Adhérer
+            </button>
+          </a>
         </div>
       </nav>
       <?php if (is_front_page()) { ?>
@@ -53,14 +61,18 @@
           </div>
           <p>Association française des patients atteints de mastocytoses et de syndromes d’activation mastocytaires (SAMA)</p>
           <div class="hero__ctas">
-            <button class="button--large button--tertiary elevation--tertiary--5">
-              <?php print_asset('/assets/icons/hand-heart.svg'); ?>
-              Faire un don
-            </button>
-            <button class="button--large button--secondary--alt elevation--secondary--alt--5">
-              <?php print_asset('/assets/icons/badge-account-horizontal.svg'); ?>
-              Adhérer
-            </button>
+            <a class="a-button" href="<?php echo DONNATION_URL; ?>">
+              <button class="button--large button--tertiary elevation--tertiary--5">
+                <?php print_asset('/assets/icons/hand-heart.svg'); ?>
+                Faire un don
+              </button>
+            </a>
+            <a class="a-button" href="<?php echo ADHESION_URL; ?>">
+              <button class="button--large button--secondary--alt elevation--secondary--alt--5">
+                <?php print_asset('/assets/icons/badge-account-horizontal.svg'); ?>
+                Adhérer
+              </button>
+            </a>
           </div>
           <div class="scroll-discover">
             <div class="scroll-discover__text">Découvrir</div>
