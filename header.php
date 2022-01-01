@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <?php
-  define('ADHESION_URL', 'https://www.helloasso.com/associations/assomast/adhesions/formulaire-adhesion-assomast-2021');
+  define('ADHESION_URL', 'https://www.helloasso.com/associations/assomast/adhesions/formulaire-adhesion-assomast-2022');
   define('DONNATION_URL', 'https://www.helloasso.com/associations/assomast/formulaires/4');
 ?>
 
